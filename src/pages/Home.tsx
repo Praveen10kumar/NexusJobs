@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Users, TrendingUp, Award, CheckCircle, ArrowRight, Star, Building, Target } from 'lucide-react';

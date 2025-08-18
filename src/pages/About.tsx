@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Award, Users, Target, TrendingUp, Heart, Star, CheckCircle, Briefcase } from 'lucide-react';
 
