@@ -49,7 +49,7 @@ const Home = () => {
               repeat: Infinity,
               ease: "linear"
             }}
-            className="absolute top-10 left-10 w-20 h-20 bg-[#dbdce9]/10 rounded-full blur-xl"
+            className="absolute top-10 left-10 w-20 h-20 bg-[#dbdce9]/10 rounded-full blur-xl hidden sm:block"
           />
           <motion.div
             animate={{
@@ -61,7 +61,7 @@ const Home = () => {
               repeat: Infinity,
               ease: "easeInOut"
             }}
-            className="absolute top-1/3 right-10 w-32 h-32 bg-[#dbdce9]/5 rounded-full blur-2xl"
+            className="absolute top-1/3 right-10 w-32 h-32 bg-[#dbdce9]/5 rounded-full blur-2xl hidden sm:block"
           />
           <motion.div
             animate={{
@@ -73,7 +73,7 @@ const Home = () => {
               repeat: Infinity,
               ease: "linear"
             }}
-            className="absolute bottom-20 left-1/4 w-16 h-16 bg-[#dbdce9]/8 rounded-full blur-lg"
+            className="absolute bottom-20 left-1/4 w-16 h-16 bg-[#dbdce9]/8 rounded-full blur-lg hidden sm:block"
           />
         </div>
 
@@ -90,7 +90,7 @@ const Home = () => {
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1, delay: 0.5 }}
-                className="text-6xl md:text-8xl font-bold text-[#dbdce9] relative"
+                className="text-4xl sm:text-6xl md:text-8xl font-bold text-[#dbdce9] relative"
               >
                 <span className="block">NEXUS</span>
                 <motion.span

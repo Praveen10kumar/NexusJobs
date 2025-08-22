@@ -30,7 +30,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#293748] border-t border-[#dbdce9]/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           
           {/* Company Info */}
           <motion.div
@@ -140,11 +140,11 @@ const Footer = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-12 pt-8 border-t border-[#dbdce9]/20"
         >
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
             <p className="text-gray-300 text-sm">
               © 2024 Nexus Jobs. All rights reserved.
             </p>
-            <p className="text-gray-300 text-sm">
+            <p className="text-gray-300 text-sm text-center sm:text-right">
               Aspire HR Consultants Fluent in finding leaders — The HR One-Stop Shop
             </p>
           </div>

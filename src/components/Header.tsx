@@ -35,7 +35,7 @@ const Header = () => {
               <img
                 src="src/assets/nexus-logo.jpeg"
                 alt="Nexus Logo"
-                className="h-10 w-10 object-fit"
+                className="h-10 w-10 sm:h-12 sm:w-12 object-cover rounded-full"
               />
             </motion.div>
             <div style={{
@@ -43,7 +43,7 @@ const Header = () => {
               fontWeight: 6,
               fontStyle: 'normal'
             }}>
-              <h2 className="text-lg font-bold text-[#dbdce9] group-hover:text-white transition-colors">
+              <h2 className="text-sm sm:text-lg font-bold text-[#dbdce9] group-hover:text-white transition-colors">
                 NEXUS JOBS
               </h2>
             </div>
@@ -84,7 +84,7 @@ const Header = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-[#dbdce9] hover:text-white transition-colors"
+            className="md:hidden text-[#dbdce9] hover:text-white transition-colors p-2"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
