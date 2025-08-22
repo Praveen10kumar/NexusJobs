@@ -33,7 +33,7 @@ const Header = () => {
               
             >
               <img
-                src="src/assets/nexus-logo.jpeg"
+                src="nexus-logo.jpeg"
                 alt="Nexus Logo"
                 className="h-10 w-10 sm:h-12 sm:w-12 object-cover rounded-full"
               />
