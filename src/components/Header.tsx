@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Briefcase } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Header = () => {
@@ -11,7 +11,7 @@ const Header = () => {
     { name: 'HOME', path: '/' },
     { name: 'ABOUT', path: '/about' },
     { name: 'SERVICES', path: '/services' },
-    { name: 'EMPLOYER', path: '/employer' },
+    { name: 'OUR PARTNERS', path: '/employer' },
     { name: 'CONTACT', path: '/contact' },
   ];
 
@@ -29,17 +29,23 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
             <motion.div 
-              whileHover={{ rotate: 360 }}
-              transition={{ duration: 0.5 }}
-              className="p-2 bg-gradient-to-r from-[#dbdce9] to-[#dbdce9]/80 rounded-full"
+              whileHover={{ scale: 1.1 }}
+              
             >
-              <Briefcase className="h-8 w-8 text-[#3e546e]" />
+              <img
+                src="src/assets/nexus-logo.jpeg"
+                alt="Nexus Logo"
+                className="h-10 w-10 object-fit"
+              />
             </motion.div>
-            <div>
-              <h1 className="text-2xl font-bold text-[#dbdce9] group-hover:text-white transition-colors">
-                NEXUS
-              </h1>
-              <p className="text-sm text-[#dbdce9]/80">JOBS</p>
+            <div style={{
+              fontFamily: '"Font Awesome 6 Free"',
+              fontWeight: 6,
+              fontStyle: 'normal'
+            }}>
+              <h2 className="text-lg font-bold text-[#dbdce9] group-hover:text-white transition-colors">
+                NEXUS JOBS
+              </h2>
             </div>
           </Link>
 
