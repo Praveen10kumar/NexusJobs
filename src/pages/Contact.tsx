@@ -348,7 +348,7 @@ const Contact = () => {
                       whileHover={{ scale: 1.05, y: -2 }}
                       className={`flex items-center space-x-2 md:space-x-3 p-3 md:p-4 bg-[#293748]/50 rounded-xl border border-[#dbdce9]/10 text-gray-300 ${color} hover:border-[#dbdce9]/30 transition-all duration-300`}
                     >
-                      <Icon size={16} md={20} />
+                      <Icon size={20} />
                       <span className="font-medium text-sm md:text-base">{name}</span>
                     </motion.a>
                   ))}
@@ -408,7 +408,7 @@ const Contact = () => {
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center space-x-2 md:space-x-3 px-6 md:px-8 py-3 md:py-4 bg-indigo-700 hover:bg-indigo-400 text-white rounded-full font-semibold text-base md:text-lg transition-all duration-300 shadow-lg hover:shadow-xl"
             >
-              <MessageCircle size={20} md={24} />
+              <MessageCircle size={24} />
               <span>Contact us on WhatsApp</span>
             </motion.a>
           </motion.div>
