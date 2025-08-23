@@ -1,23 +1,51 @@
-// ...existing code...
 import { motion } from 'framer-motion';
-import { 
-  Network, 
-  Users, 
-  Target, 
-  Award, 
-  Handshake,
-  Globe,
-  TrendingUp,
-  Star,
-  CheckCircle,
-  Building,
-  UserCheck,
-  Shield,
-  Clock,
-  ArrowRight
-} from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Building, Users, Globe, Star, CheckCircle, ArrowRight } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 const Employer = () => {
+  const [companyLogos, setCompanyLogos] = useState<string[]>([]);
+
+  // This effect will run once on component mount to load the company logos
+  useEffect(() => {
+    // In a real implementation, you might want to fetch this list from an API
+    // For now, we'll use a hardcoded list assuming the files exist in public/companies/
+    const logos = [
+      'company1.png',
+      'company2.png',
+      'company3.png',
+      'company4.png',
+      'company5.png',
+      'company6.png',
+      'company7.png',
+      'company8.png',
+      'company9.png',
+      'company10.png',
+      'company11.png',
+      'company12.png',
+      'company13.png',
+      'company14.png',
+      'company15.png',
+      'company16.png',
+      'company17.png',
+      'company18.png',
+      'company19.png',
+      'company20.png',
+      'company21.png',
+      'company22.png',
+      'company23.png',
+      'company24.png',
+      'company25.png',
+      'company26.png',
+      'company27.png',
+      'company28.png',
+      'company29.png',
+      // Add all your company logo filenames here
+    ];
+    
+    setCompanyLogos(logos);
+  }, []);
+
   const networkStats = [
     {
       icon: Building,
@@ -45,378 +73,389 @@ const Employer = () => {
     }
   ];
 
-  const clientHandling = [
-    {
-      icon: Target,
-      title: 'Requirement Analysis',
-      description: 'Deep dive into your specific needs, company culture, and role requirements to ensure perfect matches.'
-    },
-    {
-      icon: UserCheck,
-      title: 'Dedicated Account Manager',
-      description: 'Assigned dedicated account manager for personalized service and seamless communication throughout the process.'
-    },
-    {
-      icon: Shield,
-      title: 'Quality Assurance',
-      description: 'Multi-level screening and quality checks to ensure only the best candidates reach your consideration.'
-    },
-    {
-      icon: Clock,
-      title: 'Timely Delivery',
-      description: 'Committed to meeting deadlines with our proven track record of on-time candidate submissions.'
-    },
-    {
-      icon: Handshake,
-      title: 'Long-term Partnership',
-      description: 'Building lasting relationships with ongoing support, market insights, and strategic recruitment advice.'
-    },
-    {
-      icon: TrendingUp,
-      title: 'Performance Tracking',
-      description: 'Regular reporting and analytics to track hiring performance and optimize recruitment strategies.'
-    }
-  ];
-
-  const recruiters = [
-    {
-      name: 'Tech Solutions Inc.',
-      specialization: 'IT & Software Development',
-      image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=300',
-      description: 'Leading technology recruiter specializing in full-stack developers, DevOps engineers, and technical architects.',
-      placements: '150+ placements',
-      industries: ['Fintech', 'E-commerce', 'SaaS']
-    },
-    {
-      name: 'Healthcare Staffing Pro',
-      specialization: 'Healthcare & Medical',
-      image: 'https://images.pexels.com/photos/3184436/pexels-photo-3184436.jpeg?auto=compress&cs=tinysrgb&w=300',
-      description: 'Specialized healthcare recruitment covering doctors, nurses, medical technicians, and healthcare administrators.',
-      placements: '200+ placements',
-      industries: ['Hospitals', 'Clinics', 'Pharma']
-    },
-    {
-      name: 'Finance Talent Hub',
-      specialization: 'Finance & Banking',
-      image: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=300',
-      description: 'Expert recruitment for banking, financial services, accounting, and investment management positions.',
-      placements: '120+ placements',
-      industries: ['Banking', 'Insurance', 'Investment']
-    },
-    {
-      name: 'Manufacturing Masters',
-      specialization: 'Manufacturing & Engineering',
-      image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=300',
-      description: 'Specialized in manufacturing, mechanical, electrical, and industrial engineering recruitment.',
-      placements: '80+ placements',
-      industries: ['Automotive', 'Aerospace', 'Industrial']
-    },
-    {
-      name: 'Sales Force Partners',
-      specialization: 'Sales & Marketing',
-      image: 'https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=300',
-      description: 'Expert recruitment for sales professionals, marketing managers, and business development roles.',
-      placements: '100+ placements',
-      industries: ['FMCG', 'Real Estate', 'Tech']
-    },
-    {
-      name: 'Executive Search Elite',
-      specialization: 'Executive & Leadership',
-      image: 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=300',
-      description: 'High-level executive search for C-suite positions, directors, and senior management roles.',
-      placements: '50+ placements',
-      industries: ['Corporate', 'Startups', 'MNCs']
-    }
-  ];
-
   const benefits = [
     {
-      icon: Award,
-      title: 'Industry Expertise',
-      description: 'Deep domain knowledge across 15+ industries with specialized recruitment teams for each sector.'
+      title: "Access to Quality Talent",
+      description: "Connect with pre-screened, qualified candidates who match your specific requirements.",
     },
     {
-      icon: Network,
-      title: 'Extensive Network',
-      description: 'Access to our vast network of pre-screened candidates and industry professionals across India.'
+      title: "Streamlined Hiring",
+      description: "Save time and resources with our efficient recruitment process tailored to your needs.",
     },
     {
-      icon: CheckCircle,
-      title: 'Proven Process',
-      description: 'Streamlined recruitment process with defined milestones and transparent communication at every step.'
+      title: "Industry Expertise",
+      description: "Benefit from our recruiters' deep understanding of your industry's unique hiring landscape.",
     },
     {
-      icon: TrendingUp,
-      title: 'Market Insights',
-      description: 'Regular market intelligence reports, salary benchmarking, and hiring trend analysis for better decisions.'
+      title: "Flexible Engagement Models",
+      description: "Choose from various recruitment solutions that align with your organizational goals.",
+    },
+    {
+      title: "Long-term Support",
+      description: "Enjoy continued assistance even after successful placement of candidates.",
+    },
+    {
+      title: "Market Insights",
+      description: "Gain valuable information about salary benchmarks, skill availability, and industry trends.",
+    }
+  ];
+
+  const testimonials = [
+    {
+      quote: "Nexus Jobs has transformed our hiring process. Their team consistently delivers quality candidates who align perfectly with our requirements and company culture.",
+      name: "Rahul Mehta",
+      position: "HR Director",
+      company: "TechVision India"
+    },
+    {
+      quote: "Working with Nexus Jobs has been a game-changer for our expansion plans. They understand our needs and provide tailored recruitment solutions that have helped us scale effectively.",
+      name: "Priya Shah",
+      position: "COO",
+      company: "GrowthFirst Solutions"
+    },
+    {
+      quote: "The team at Nexus Jobs goes beyond just matching skills. They truly understand organizational fit and have been instrumental in building our leadership team.",
+      name: "Vikram Singh",
+      position: "CEO",
+      company: "Innovate Systems"
     }
   ];
 
   return (
-    <div className="pt-20">
+    <div className="pt-16 md:pt-20">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-[#3e546e] via-[#293748] to-[#1e2a38] overflow-hidden">
+      <section className="relative py-16 sm:py-20 md:py-24 bg-gradient-to-br from-[#3e546e] via-[#293748] to-[#1e2a38] overflow-hidden">
         <div className="absolute inset-0">
           <motion.div
             animate={{
-              rotate: 360,
               scale: [1, 1.2, 1],
+              rotate: 360,
             }}
             transition={{
               duration: 30,
               repeat: Infinity,
               ease: "linear"
             }}
-            className="absolute top-20 right-10 w-40 h-40 bg-[#dbdce9]/8 rounded-full blur-2xl"
+            className="absolute top-20 right-10 w-32 md:w-64 h-32 md:h-64 bg-[#dbdce9]/10 rounded-full blur-3xl"
           />
           <motion.div
             animate={{
               y: [-20, 20, -20],
-              rotate: [0, -180, -360],
             }}
             transition={{
-              duration: 25,
+              duration: 15,
               repeat: Infinity,
               ease: "easeInOut"
             }}
-            className="absolute bottom-20 left-10 w-32 h-32 bg-[#dbdce9]/5 rounded-full blur-xl"
+            className="absolute bottom-20 left-10 w-24 md:w-48 h-24 md:h-48 bg-[#dbdce9]/5 rounded-full blur-2xl"
           />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className="space-y-8"
+            transition={{ duration: 0.8 }}
+            className="max-w-3xl mx-auto"
           >
             <motion.h1
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.2 }}
-              className="text-5xl md:text-7xl font-bold text-[#dbdce9] mb-6"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#dbdce9] mb-6"
             >
-              For Employers
+              Partner with Nexus Jobs
             </motion.h1>
             
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.4 }}
-              className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed"
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-base sm:text-lg md:text-xl text-gray-300 mb-8"
             >
-              Partner with our extensive network of specialized recruiters to find the perfect talent for your organization
+              Join our network of leading employers and access top talent tailored to your specific needs
             </motion.p>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <Link to="/contact">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-white to-[#f7f8fa] text-[#3e546e] rounded-full font-semibold text-sm sm:text-base inline-flex items-center shadow-md shadow-white/20 hover:shadow-lg hover:shadow-white/30 transition-all duration-300"
+                >
+                  Become a Partner
+                  <ArrowRight size={18} className="ml-2" />
+                </motion.button>
+              </Link>
+            </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* Network Stats */}
-      <section className="py-20 bg-[#293748]">
+      {/* Stats Section */}
+      <section className="py-16 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#dbdce9] mb-6">
-              Our Network
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Leveraging our extensive network to connect you with the best talent across India
-            </p>
-          </motion.div>
+          <div className="text-center mb-12 md:mb-16">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#3e546e] mb-4"
+            >
+              Our Network at a Glance
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto"
+            >
+              Join hundreds of employers who trust Nexus Jobs for their recruitment needs
+            </motion.p>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {networkStats.map((stat, index) => (
               <motion.div
                 key={stat.label}
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ scale: 1.05, rotateY: 5 }}
-                className="text-center p-8 bg-gradient-to-br from-[#3e546e]/40 to-[#3e546e]/20 backdrop-blur-sm rounded-3xl border border-[#dbdce9]/10 hover:border-[#dbdce9]/30 transition-all duration-300"
-              >
-                <div className="w-16 h-16 bg-gradient-to-br from-[#dbdce9] to-[#dbdce9]/80 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <stat.icon className="w-8 h-8 text-[#3e546e]" />
-                </div>
-                
-                <h3 className="text-3xl font-bold text-[#dbdce9] mb-2">{stat.number}</h3>
-                <p className="text-lg font-medium text-[#dbdce9]/80 mb-2">{stat.label}</p>
-                <p className="text-gray-300 text-sm">{stat.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How We Handle Clients */}
-      <section className="py-20 bg-[#3e546e]/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#dbdce9] mb-6">
-              How We Handle Clients
-            </h2>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto">
-              Our client-centric approach ensures personalized service and exceptional results for every partnership
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {clientHandling.map((item, index) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 50, rotateX: -15 }}
-                whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ 
-                  y: -10,
-                  rotateY: 5,
-                  scale: 1.02
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-gradient-to-br from-white to-[#f7f8fa] p-6 md:p-8 rounded-xl border border-gray-200 text-center hover:shadow-lg hover:shadow-[#3e546e]/15 transition-all duration-300"
+                style={{
+                  backgroundImage: `linear-gradient(135deg, rgba(${62 + index * 8}, ${84 + index * 4}, ${110 - index * 3}, 0.07) 0%, rgba(255, 255, 255, 0) 60%)`
                 }}
-                className="group relative p-8 bg-gradient-to-br from-[#3e546e]/40 to-[#3e546e]/20 backdrop-blur-sm rounded-3xl border border-[#dbdce9]/10 hover:border-[#dbdce9]/30 transition-all duration-300"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-[#dbdce9]/5 to-transparent opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity duration-300" />
-                
-                <div className="relative z-10 space-y-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#dbdce9] to-[#dbdce9]/80 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <item.icon className="w-8 h-8 text-[#3e546e]" />
-                  </div>
-                  
-                  <h3 className="text-xl font-semibold text-[#dbdce9] group-hover:text-white transition-colors">
-                    {item.title}
-                  </h3>
-                  
-                  <p className="text-gray-300 leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Our Recruiters */}
-      <section className="py-20 bg-[#293748]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#dbdce9] mb-6">
-              Our Recruiter Partners
-            </h2>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto">
-              Meet our specialized recruiter partners who bring deep industry expertise and proven track records
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {recruiters.map((recruiter, index) => (
-              <motion.div
-                key={recruiter.name}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                whileHover={{ y: -5, scale: 1.02 }}
-                className="group bg-gradient-to-br from-[#3e546e]/40 to-[#3e546e]/20 backdrop-blur-sm rounded-3xl p-8 border border-[#dbdce9]/10 hover:border-[#dbdce9]/30 transition-all duration-300"
-              >
-                <div className="space-y-6">
-                  <div className="flex items-center space-x-4">
-                    <motion.div
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      className="flex-shrink-0"
-                    >
-                      <img
-                        src={recruiter.image}
-                        alt={recruiter.name}
-                        className="w-16 h-16 rounded-2xl object-cover border-2 border-[#dbdce9]/20 group-hover:border-[#dbdce9]/50 transition-all duration-300"
-                      />
-                    </motion.div>
-                    
-                    <div>
-                      <h3 className="text-xl font-bold text-[#dbdce9] group-hover:text-white transition-colors">
-                        {recruiter.name}
-                      </h3>
-                      <p className="text-[#dbdce9]/80 font-medium text-sm">
-                        {recruiter.specialization}
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <p className="text-gray-300 leading-relaxed text-sm">
-                    {recruiter.description}
-                  </p>
-                  
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-center text-sm">
-                      <span className="text-gray-300">Track Record:</span>
-                      <span className="text-[#dbdce9] font-medium">{recruiter.placements}</span>
-                    </div>
-                    
-                    <div className="flex flex-wrap gap-2">
-                      {recruiter.industries.map((industry) => (
-                        <span
-                          key={industry}
-                          className="px-3 py-1 bg-[#dbdce9]/10 border border-[#dbdce9]/20 rounded-full text-xs text-[#dbdce9]"
-                        >
-                          {industry}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="py-20 bg-[#3e546e]/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#dbdce9] mb-6">
-              Why Partner With Us
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Experience the advantages of working with India's most trusted recruitment network
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {benefits.map((benefit, index) => (
-              <motion.div
-                key={benefit.title}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ y: -5, scale: 1.02 }}
-                className="group text-center p-8 bg-gradient-to-br from-[#3e546e]/40 to-[#3e546e]/20 backdrop-blur-sm rounded-2xl border border-[#dbdce9]/10 hover:border-[#dbdce9]/30 transition-all duration-300"
-              >
-                <div className="w-16 h-16 bg-gradient-to-br from-[#dbdce9] to-[#dbdce9]/80 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <benefit.icon className="w-8 h-8 text-[#3e546e]" />
+                <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-[#3e546e] to-[#293748] rounded-full flex items-center justify-center shadow-md shadow-[#3e546e]/20">
+                  <stat.icon size={24} className="text-white" />
                 </div>
                 
-                <h3 className="text-xl font-semibold text-[#dbdce9] mb-4 group-hover:text-white transition-colors">
-                  {benefit.title}
+                <h3 className="text-2xl sm:text-3xl font-bold text-[#3e546e] mb-1">
+                  {stat.number}
                 </h3>
                 
-                <p className="text-gray-300 leading-relaxed">
+                <p className="text-base font-medium text-[#3e546e]/80 mb-2">
+                  {stat.label}
+                </p>
+                
+                <p className="text-sm text-gray-600">
+                  {stat.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* Company Logos Section */}
+      <section className="py-16 md:py-20 bg-[#f7f8fa]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12 md:mb-16"
+          >
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#3e546e] mb-4">
+              Our Trusted Partners
+            </h2>
+            <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
+              We're proud to work with industry-leading companies across various sectors
+            </p>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative rounded-2xl overflow-hidden bg-white border border-gray-200 shadow-md p-8 md:p-12"
+          >
+            {/* Background decorative elements */}
+            <div className="absolute inset-0 overflow-hidden">
+              <div className="absolute -top-20 -right-20 w-40 h-40 bg-[#3e546e]/5 rounded-full"></div>
+              <div className="absolute bottom-10 left-10 w-20 h-20 bg-[#3e546e]/3 rounded-full"></div>
+            </div>
+            
+            {/* Logos grid */}
+            <div className="relative z-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 md:gap-12">
+              {companyLogos.map((logo, index) => (
+                <motion.div
+                  key={logo}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: index * 0.05 }}
+                  whileHover={{ 
+                    y: -5,
+                    scale: 1.05,
+                    boxShadow: '0 10px 25px -5px rgba(62, 84, 110, 0.1)'
+                  }}
+                  className="flex items-center justify-center p-4 bg-white rounded-xl border border-gray-100 hover:border-gray-200 transition-all duration-300"
+                >
+                  <img 
+                    src={`/companies/${logo}`} 
+                    alt={`Partner Company ${index + 1}`}
+                    className="max-w-full h-16 object-contain transition-all"
+                  />
+                </motion.div>
+              ))}
+            </div>
+            
+            {/* If you have more logos than displayed */}
+            {companyLogos.length > 12 && (
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+                className="mt-12 text-center"
+              >
+                <Link to="/partners">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-6 py-3 bg-[#f7f8fa] text-[#3e546e] rounded-full font-medium text-sm sm:text-base inline-flex items-center border border-gray-200 hover:border-[#3e546e]/30 hover:bg-[#3e546e]/5 transition-all duration-300"
+                  >
+                    View All Partners
+                    <ArrowRight size={16} className="ml-2" />
+                  </motion.button>
+                </Link>
+              </motion.div>
+            )}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Why Partner Section */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="space-y-6 md:space-y-8"
+            >
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#3e546e]">
+                Why Partner with Nexus Jobs?
+              </h2>
+              
+              <p className="text-gray-600 text-base sm:text-lg">
+                Nexus Jobs offers a unique value proposition to employers, combining deep industry knowledge, an extensive talent network, and a personalized approach to recruitment. Our partnership approach means we become an extension of your HR team, understanding your culture and requirements to deliver the perfect talent match.
+              </p>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+                {benefits.slice(0, 4).map((benefit, index) => (
+                  <motion.div
+                    key={benefit.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="flex items-start space-x-2"
+                  >
+                    <CheckCircle size={18} className="text-[#3e546e] mt-1 flex-shrink-0" />
+                    <div>
+                      <h3 className="text-base font-semibold text-[#3e546e] mb-1">
+                        {benefit.title}
+                      </h3>
+                      <p className="text-sm text-gray-600">
+                        {benefit.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+              
+              <Link to="/services">
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="px-6 py-3 mt-4 bg-gradient-to-r from-[#3e546e] to-[#293748] text-white rounded-full font-semibold text-sm sm:text-base inline-flex items-center shadow-md shadow-[#3e546e]/20 hover:shadow-lg hover:shadow-[#3e546e]/30 transition-all duration-300"
+                >
+                  Explore Our Services
+                  <ArrowRight size={16} className="ml-2" />
+                </motion.button>
+              </Link>
+            </motion.div>
+            
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="relative rounded-2xl overflow-hidden shadow-xl">
+                <img 
+                  src="/src/assets/partner-image.jpg" 
+                  alt="Business Partners" 
+                  className="w-full h-auto object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#3e546e]/70 to-transparent flex items-end">
+                  <div className="p-6 md:p-8 text-white">
+                    <h3 className="text-lg md:text-xl font-bold mb-2">Join Our Network Today</h3>
+                    <p className="text-sm md:text-base text-white/90">
+                      Connect with top talent across industries and locations
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Additional Benefits */}
+      <section className="py-16 md:py-20 bg-[#f7f8fa]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 md:mb-16">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#3e546e] mb-4"
+            >
+              More Benefits for Our Partners
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto"
+            >
+              Beyond recruitment, we offer additional value to our partner organizations
+            </motion.p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            {benefits.slice(4).map((benefit, index) => (
+              <motion.div
+                key={benefit.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-gradient-to-br from-white to-[#f7f8fa] p-6 md:p-8 rounded-xl border border-gray-200 hover:shadow-lg hover:shadow-[#3e546e]/15 transition-all duration-300"
+                style={{
+                  backgroundImage: `radial-gradient(circle at ${index % 2 === 0 ? 'top right' : 'bottom left'}, rgba(62, 84, 110, 0.05), transparent)`
+                }}
+              >
+                <h3 className="text-lg md:text-xl font-bold text-[#3e546e] mb-3">
+                  {benefit.title}
+                </h3>
+                <p className="text-gray-600 text-base">
                   {benefit.description}
                 </p>
               </motion.div>
@@ -425,169 +464,92 @@ const Employer = () => {
         </div>
       </section>
 
-      {/* Platform Potential */}
-      <section className="py-20 bg-[#293748] relative overflow-hidden">
-        <div className="absolute inset-0">
-          <motion.div
-            animate={{
-              scale: [1, 1.1, 1],
-              rotate: [0, 180, 360],
-            }}
-            transition={{
-              duration: 30,
-              repeat: Infinity,
-              ease: "linear"
-            }}
-            className="absolute top-10 left-10 w-40 h-40 bg-[#dbdce9]/5 rounded-full blur-2xl"
-          />
-          <motion.div
-            animate={{
-              scale: [1.2, 1, 1.2],
-              rotate: [360, 180, 0],
-            }}
-            transition={{
-              duration: 25,
-              repeat: Infinity,
-              ease: "linear"
-            }}
-            className="absolute bottom-10 right-10 w-32 h-32 bg-[#dbdce9]/8 rounded-full blur-xl"
-          />
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="space-y-8"
+      {/* Testimonials */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 md:mb-16">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#3e546e] mb-4"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-[#dbdce9]">
-                Unlock Your Platform's Potential
-              </h2>
-              
-              <p className="text-xl text-gray-300 leading-relaxed">
-                At NEXUS JOBS, our expertise spans the full spectrum of today's technology landscape, 
-                with a platform-agnostic approach that ensures we find the perfect fit for your unique 
-                business needs.
-              </p>
-
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="w-6 h-6 text-[#dbdce9]" />
-                  <span className="text-gray-300">Platform-agnostic recruitment approach</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="w-6 h-6 text-[#dbdce9]" />
-                  <span className="text-gray-300">Technology-first candidate sourcing</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="w-6 h-6 text-[#dbdce9]" />
-                  <span className="text-gray-300">Custom solutions for unique business needs</span>
-                </div>
-              </div>
-
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="group px-8 py-4 bg-gradient-to-r from-[#dbdce9] to-[#dbdce9]/90 text-[#3e546e] rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300 flex items-center space-x-2"
-              >
-                <span>Partner With Us</span>
-                <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
-              </motion.button>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative"
+              What Our Partners Say
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto"
             >
-              <div className="grid grid-cols-2 gap-4">
-                {/* Partner logos placeholder */}
-                {[...Array(8)].map((_, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    whileHover={{ scale: 1.05, rotateY: 10 }}
-                    className="aspect-square bg-gradient-to-br from-[#3e546e]/40 to-[#3e546e]/20 backdrop-blur-sm rounded-2xl border border-[#dbdce9]/10 hover:border-[#dbdce9]/30 transition-all duration-300 flex items-center justify-center"
-                  >
-                    <Building className="w-8 h-8 text-[#dbdce9]/60" />
-                  </motion.div>
-                ))}
-              </div>
-              
+              Hear from the companies who have partnered with us
+            </motion.p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            {testimonials.map((testimonial, index) => (
               <motion.div
-                animate={{
-                  y: [0, -10, 0],
-                  rotate: [0, 2, 0],
+                key={testimonial.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-gradient-to-br from-white to-[#f7f8fa] p-6 md:p-8 rounded-xl border border-gray-200 shadow-sm hover:shadow-lg hover:shadow-[#3e546e]/15 transition-all duration-300 flex flex-col"
+                style={{
+                  backgroundImage: `radial-gradient(circle at ${index % 2 === 0 ? 'top right' : 'bottom left'}, rgba(62, 84, 110, 0.03), transparent)`
                 }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-                className="absolute -top-4 -right-4 w-16 h-16 bg-[#dbdce9]/20 rounded-full blur-sm"
-              />
-            </motion.div>
+              >
+                <div className="mb-4">
+                  <svg width="40" height="40" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" className="text-[#3e546e]/20 fill-current">
+                    <path d="M10.4 2.5C7.6 3.5 5.4 5.2 3.9 7.4C2.4 9.6 1.6 12.1 1.6 14.8C1.6 18.5 2.9 21.6 5.5 24.2C8.1 26.8 11.2 28 14.9 28C18.5 28 21.6 26.8 24.2 24.2C26.8 21.6 28 18.5 28 14.8C28 12.1 27.3 9.6 25.8 7.4C24.3 5.2 22.1 3.5 19.3 2.5C18.2 2.1 17.2 2.6 16.8 3.7C16.4 4.8 16.9 5.8 18 6.2C20 6.9 21.5 8.1 22.6 9.7C23.7 11.2 24.2 12.9 24.2 14.8C24.2 17.4 23.3 19.6 21.5 21.4C19.7 23.2 17.5 24.1 14.9 24.1C12.3 24.1 10.1 23.2 8.3 21.4C6.5 19.6 5.6 17.4 5.6 14.8C5.6 12.9 6.1 11.2 7.2 9.7C8.3 8.1 9.8 6.9 11.8 6.2C12.9 5.8 13.4 4.8 13 3.7C12.6 2.6 11.5 2.1 10.4 2.5Z"/>
+                  </svg>
+                </div>
+                
+                <p className="text-gray-600 mb-6 text-sm md:text-base flex-grow italic">
+                  "{testimonial.quote}"
+                </p>
+                
+                <div>
+                  <h4 className="font-semibold text-[#3e546e]">
+                    {testimonial.name}
+                  </h4>
+                  <div className="text-sm text-gray-500">
+                    {testimonial.position}, {testimonial.company}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-[#3e546e] to-[#293748] relative overflow-hidden">
-        <div className="absolute inset-0">
-          <motion.div
-            animate={{
-              scale: [1, 1.1, 1],
-              rotate: [0, 180, 360],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: "linear"
-            }}
-            className="absolute top-10 right-10 w-40 h-40 bg-[#dbdce9]/5 rounded-full blur-2xl"
-          />
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+      <section className="py-16 md:py-24 bg-[#3e546e]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="space-y-8"
+            viewport={{ once: true }}
+            className="bg-white/10 backdrop-blur-sm p-8 md:p-10 lg:p-12 rounded-3xl border border-white/30 text-center"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#dbdce9] mb-6">
-              Ready to Scale Your Team?
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 md:mb-6">
+              Ready to Partner with Nexus Jobs?
             </h2>
-            
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Join our network of successful employers and experience the power of strategic recruitment. 
-              Let's build your dream team together.
+            <p className="text-base sm:text-lg md:text-xl text-gray-200 mb-8 md:mb-10 max-w-3xl mx-auto">
+              Join our network of employers and gain access to top talent across India. Our team is ready to discuss your specific recruitment needs.
             </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link to="/contact">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="group px-8 py-4 bg-gradient-to-r from-[#dbdce9] to-[#dbdce9]/90 text-[#3e546e] rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300 flex items-center space-x-2"
+                className="px-8 md:px-10 py-3 md:py-4 bg-gradient-to-r from-white to-[#f7f8fa] text-[#3e546e] rounded-full font-semibold text-base md:text-lg shadow-md shadow-white/20 hover:shadow-lg hover:shadow-white/30 transition-all duration-300 flex items-center justify-center mx-auto"
               >
-                <span>Start Partnership</span>
-                <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+                Become a Partner
+                <ArrowRight size={20} className="ml-2" />
               </motion.button>
-              
-              <motion.a
-                href="mailto:info@nexusjobs.in"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 border-2 border-[#dbdce9] text-[#dbdce9] rounded-full font-semibold text-lg hover:bg-[#dbdce9] hover:text-[#3e546e] transition-all duration-300"
-              >
-                Email: info@nexusjobs.in
-              </motion.a>
-            </div>
+            </Link>
           </motion.div>
         </div>
       </section>

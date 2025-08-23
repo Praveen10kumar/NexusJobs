@@ -40,9 +40,11 @@ const Footer = () => {
             className="space-y-4"
           >
             <div className="flex items-center space-x-2">
-              <div className="p-2 bg-gradient-to-r from-[#dbdce9] to-[#dbdce9]/80 rounded-full">
-                <Briefcase className="h-6 w-6 text-[#3e546e]" />
-              </div>
+              <img
+                src="/nexus-logo.jpeg"
+                alt="Nexus Logo"
+                className="h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 object-contain"
+              />
               <div>
                 <h1 className="text-xl font-bold text-[#dbdce9]">NEXUS JOBS</h1>
                 <p className="text-sm text-[#dbdce9]/80">HR Consultancy</p>

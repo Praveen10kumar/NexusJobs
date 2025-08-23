@@ -22,50 +22,53 @@ const Header = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.8 }}
-      className="bg-[#3e546e]/90 backdrop-blur-md shadow-xl sticky top-0 z-50 border-b border-[#dbdce9]/20"
+      className="bg-white shadow-md sticky top-0 z-50 border-b border-gray-200"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex justify-between items-center py-3 sm:py-4 md:py-5">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
             <motion.div 
               whileHover={{ scale: 1.1 }}
-              
+              className="flex items-center"
             >
               <img
-                src="nexus-logo.jpeg"
+                src="/nexus-logo.jpeg"
                 alt="Nexus Logo"
-                className="h-10 w-10 sm:h-12 sm:w-12 object-cover rounded-full"
+                className="h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 object-fit"
               />
             </motion.div>
-            <div style={{
-              fontFamily: '"Font Awesome 6 Free"',
-              fontWeight: 6,
-              fontStyle: 'normal'
-            }}>
-              <h2 className="text-sm sm:text-lg font-bold text-[#dbdce9] group-hover:text-white transition-colors">
+            <div 
+              style={{
+                fontFamily: '"Font Awesome 6 Free"',
+                fontWeight: 6,
+                fontStyle: 'normal'
+              }}
+              className="hidden xs:block"
+            >
+              <h2 className="text-sm sm:text-base md:text-lg font-bold text-[#3e546e] group-hover:text-[#293748] transition-colors">
                 NEXUS JOBS
               </h2>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-2 lg:space-x-4 xl:space-x-8">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
-                className={`relative px-4 py-2 font-medium transition-all duration-300 hover:text-[#dbdce9] ${
+                className={`relative px-2 lg:px-3 xl:px-4 py-1 lg:py-2 font-medium text-xs lg:text-sm transition-all duration-300 ${
                   isActive(item.path) 
-                    ? 'text-[#dbdce9]' 
-                    : 'text-gray-300 hover:text-[#dbdce9]'
+                    ? 'text-[#3e546e]' 
+                    : 'text-gray-500 hover:text-[#3e546e]'
                 }`}
               >
                 {item.name}
                 {isActive(item.path) && (
                   <motion.div
                     layoutId="activeTab"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#dbdce9]"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#3e546e]"
                     transition={{ type: "spring", duration: 0.5 }}
                   />
                 )}
@@ -76,7 +79,7 @@ const Header = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="hidden md:block bg-gradient-to-r from-[#dbdce9] to-[#dbdce9]/90 text-[#3e546e] px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-300"
+            className="hidden md:block bg-[#3e546e] text-white text-xs lg:text-sm px-4 lg:px-6 py-1.5 lg:py-2 rounded-full font-semibold hover:bg-[#293748] transition-all duration-300"
           >
             Inquiry Now
           </motion.button>
@@ -84,9 +87,9 @@ const Header = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-[#dbdce9] hover:text-white transition-colors p-2"
+            className="md:hidden text-[#3e546e] hover:text-[#293748] transition-colors"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
 
@@ -98,24 +101,24 @@ const Header = () => {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="md:hidden border-t border-[#dbdce9]/20 pt-4 pb-6"
+              className="md:hidden border-t border-gray-200 pt-2 pb-4"
             >
-              <nav className="flex flex-col space-y-4">
+              <nav className="flex flex-col space-y-2">
                 {navItems.map((item) => (
                   <Link
                     key={item.name}
                     to={item.path}
                     onClick={() => setIsOpen(false)}
-                    className={`px-4 py-2 font-medium transition-colors ${
+                    className={`px-3 py-2 font-medium transition-colors text-sm ${
                       isActive(item.path) 
-                        ? 'text-[#dbdce9] bg-[#dbdce9]/10 rounded-lg' 
-                        : 'text-gray-300 hover:text-[#dbdce9]'
+                        ? 'text-[#3e546e] bg-gray-100 rounded-lg' 
+                        : 'text-gray-500 hover:text-[#3e546e] hover:bg-gray-50'
                     }`}
                   >
                     {item.name}
                   </Link>
                 ))}
-                <button className="mt-4 bg-gradient-to-r from-[#dbdce9] to-[#dbdce9]/90 text-[#3e546e] px-6 py-2 rounded-full font-semibold">
+                <button className="mt-2 bg-[#3e546e] text-white px-4 py-2 rounded-full font-semibold text-sm hover:bg-[#293748]">
                   Inquiry Now
                 </button>
               </nav>

@@ -117,7 +117,7 @@ const Home = () => {
                   EMPLOYERS
                 </span>
                 <span className="px-4 py-2 bg-[#dbdce9]/10 backdrop-blur-sm rounded-full border border-[#dbdce9]/20">
-                  OUTSOURCING
+                  INTERNSHIP
                 </span>
               </motion.div>
             </div>
@@ -155,18 +155,7 @@ const Home = () => {
         </div>
 
         {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2, duration: 1 }}
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="w-1 h-16 bg-gradient-to-b from-[#dbdce9] to-transparent rounded-full"
-          />
-        </motion.div>
+        {/*  */}
       </section>
 
       {/* Stats Section */}
@@ -180,7 +169,7 @@ const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05, rotateY: 5 }}
-                className="text-center p-6 bg-[#3e546e]/30 backdrop-blur-sm rounded-2xl border border-[#dbdce9]/10 hover:border-[#dbdce9]/30 transition-all duration-300"
+                className="text-center p-6 bg-[#3e546e]/90 backdrop-blur-sm rounded-2xl border border-[#dbdce9]/10 hover:border-[#dbdce9]/30 transition-all duration-300"
               >
                 <stat.icon className="w-12 h-12 text-[#dbdce9] mx-auto mb-4" />
                 <h3 className="text-3xl font-bold text-[#dbdce9] mb-2">{stat.number}</h3>
@@ -231,7 +220,7 @@ const Home = () => {
       </section>
 
       {/* Our Approach */}
-      <section className="py-20 bg-[#293748]">
+      <section className="py-20 bg-[#d7e3f1]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -239,10 +228,10 @@ const Home = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#dbdce9] mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#545670] mb-6">
               Our Approach
             </h2>
-            <p className="text-2xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-2xl text-slate-500 max-w-3xl mx-auto">
               Curious to know what it's like to partner with Nexus Jobs?
             </p>
           </motion.div>
@@ -259,9 +248,9 @@ const Home = () => {
                   rotateY: 5,
                   scale: 1.02
                 }}
-                className="group relative p-8 bg-gradient-to-br from-[#3e546e]/40 to-[#3e546e]/20 backdrop-blur-sm rounded-2xl border border-[#dbdce9]/10 hover:border-[#dbdce9]/30 transition-all duration-300"
+                className="group relative p-8 bg-[#3e546e] backdrop-blur-sm rounded-2xl border border-[#dbdce9]/10 hover:border-[#dbdce9]/30 transition-all duration-300"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-[#dbdce9]/5 to-transparent opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#dbdce9]/2 to-transparent opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300" />
                 
                 <div className="relative z-10">
                   <div className="w-16 h-16 bg-gradient-to-br from-[#dbdce9] to-[#dbdce9]/80 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -288,7 +277,7 @@ const Home = () => {
           >
             <Link
               to="/services"
-              className="inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-[#dbdce9] to-[#dbdce9]/90 text-[#3e546e] rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300"
+              className="inline-flex items-center space-x-2 px-8 py-4 bg-[#fbfbfc] text-[#3e546e] rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300"
             >
               <span>Read More</span>
               <ArrowRight size={20} />
@@ -298,7 +287,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-[#3e546e] to-[#293748] relative overflow-hidden">
+      <section className="py-20 bg-[#d7e3f1] relative overflow-hidden">
         <div className="absolute inset-0">
           <motion.div
             animate={{
@@ -321,11 +310,11 @@ const Home = () => {
             transition={{ duration: 0.8 }}
             className="space-y-8"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#dbdce9]">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#9ea3ea]">
               Build Your Future Here
             </h2>
-            
-            <div className="space-y-4 text-xl text-gray-300">
+
+            <div className="space-y-4 text-xl text-[#9ea3ea]">
               <motion.p
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -356,7 +345,7 @@ const Home = () => {
             >
               <Link
                 to="/contact"
-                className="inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-[#dbdce9] to-[#dbdce9]/90 text-[#3e546e] rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300 group"
+                className="inline-flex items-center space-x-2 px-8 py-4 bg-[#fbfbfc] text-[#3e546e] rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300 group"
               >
                 <span>Join Our Team</span>
                 <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />

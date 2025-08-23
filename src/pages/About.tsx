@@ -11,26 +11,12 @@ const About = () => {
       specialties: ['Strategic HR Planning', 'Talent Acquisition', 'Leadership Development']
     },
     {
-      name: 'Amit Sharma',
+      name: 'Naresh Gupta',
       position: 'Co-Founder & COO',
       image: 'https://images.pexels.com/photos/3778876/pexels-photo-3778876.jpeg?auto=compress&cs=tinysrgb&w=300',
       bio: 'Amit brings extensive operational expertise and business development experience. His innovative approach to HR technology and process optimization has been instrumental in Nexus Jobs\' growth and success.',
       specialties: ['Operations Management', 'Business Development', 'HR Technology']
-    },
-    {
-      name: 'Priya Singh',
-      position: 'Head of Recruitment',
-      image: 'https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=300',
-      bio: 'Priya leads our recruitment team with passion and precision. Her deep understanding of various industries and exceptional candidate screening abilities ensure perfect job-candidate matches.',
-      specialties: ['Technical Recruitment', 'Candidate Screening', 'Industry Analysis']
-    },
-    {
-      name: 'Rajesh Kumar',
-      position: 'Head of Client Relations',
-      image: 'https://images.pexels.com/photos/3778876/pexels-photo-3778876.jpeg?auto=compress&cs=tinysrgb&w=300',
-      bio: 'Rajesh manages our client relationships and ensures exceptional service delivery. His client-centric approach and problem-solving skills have earned us numerous long-term partnerships.',
-      specialties: ['Client Management', 'Account Strategy', 'Relationship Building']
-    }
+    },  
   ];
 
   const values = [
@@ -123,7 +109,7 @@ const About = () => {
       </section>
 
       {/* Our Story */}
-      <section className="py-20 bg-[#293748]">
+      <section className="py-20 bg-[#d7e3f1]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -132,15 +118,15 @@ const About = () => {
               transition={{ duration: 0.8 }}
               className="space-y-8"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-[#dbdce9]">
+              <h2 className="text-4xl md:text-5xl font-bold text-[#545670]">
                 Our Story
               </h2>
               
-              <div className="space-y-6 text-gray-300 leading-relaxed">
+              <div className="space-y-6 text-gray-500 leading-relaxed">
                 <p className="text-lg">
                   NEXUS Jobs is an employment agency in India that specializes in providing businesses 
                   and corporations with the best recruitment services in IT technical and non-IT fields. 
-                  Founded in 2018, we've grown from a small startup to a leading HR consultancy firm 
+                  Founded in 2023, we've grown from a small startup to a leading HR consultancy firm 
                   in Jaipur.
                 </p>
                 
@@ -169,7 +155,7 @@ const About = () => {
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="text-center p-4 bg-[#3e546e]/30 rounded-lg border border-[#dbdce9]/10"
+                    className="text-center p-4 bg-[#3e546e] rounded-lg border border-[#dbdce9]/10"
                   >
                     <div className="text-2xl font-bold text-[#dbdce9]">{achievement.number}</div>
                     <div className="text-sm text-gray-300">{achievement.label}</div>
@@ -185,7 +171,7 @@ const About = () => {
               className="relative"
             >
               <div className="relative bg-gradient-to-br from-[#3e546e]/40 to-[#3e546e]/20 backdrop-blur-sm rounded-3xl p-8 border border-[#dbdce9]/10">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#dbdce9]/5 to-transparent rounded-3xl" />
+                <div className="absolute inset-0 bg-[#3e546e] to-transparent rounded-3xl" />
                 
                 <div className="relative z-10 space-y-6">
                   <div className="w-20 h-20 bg-gradient-to-br from-[#dbdce9] to-[#dbdce9]/80 rounded-2xl flex items-center justify-center mx-auto">
@@ -283,7 +269,7 @@ const About = () => {
       </section>
 
       {/* Team Members */}
-      <section className="py-20 bg-[#293748]">
+      <section className="py-20 bg-[#d7e3f1]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -291,10 +277,10 @@ const About = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#dbdce9] mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#545670] mb-6">
               Our Team
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-slate-500 max-w-3xl mx-auto">
               Meet the passionate professionals who make Nexus Jobs a success
             </p>
           </motion.div>
@@ -306,7 +292,7 @@ const About = () => {
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="group bg-gradient-to-br from-[#3e546e]/40 to-[#3e546e]/20 backdrop-blur-sm rounded-3xl p-8 border border-[#dbdce9]/10 hover:border-[#dbdce9]/30 transition-all duration-300"
+                className="group bg-[#3e546e] backdrop-blur-sm rounded-3xl p-8 border border-[#dbdce9]/10 hover:border-[#dbdce9]/30 transition-all duration-300"
               >
                 <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-6 sm:space-y-0 sm:space-x-6">
                   <motion.div
@@ -353,7 +339,7 @@ const About = () => {
       </section>
 
       {/* Company Culture */}
-      <section className="py-20 bg-gradient-to-r from-[#3e546e] to-[#293748] relative overflow-hidden">
+      <section className="py-20 bg-[#d7e3f1] relative overflow-hidden">
         <div className="absolute inset-0">
           <motion.div
             animate={{
@@ -388,11 +374,11 @@ const About = () => {
             transition={{ duration: 0.8 }}
             className="space-y-8"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#dbdce9] mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#545670] mb-6">
               Why Choose Nexus Jobs?
             </h2>
             
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
               At NEXUS JOBS, our expertise spans the full spectrum of today's technology landscape, 
               with a platform-agnostic approach that ensures we find the perfect fit for your unique 
               business needs. We are committed to delivering exceptional results while maintaining the 
@@ -404,7 +390,7 @@ const About = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="p-6 bg-[#dbdce9]/10 backdrop-blur-sm rounded-xl border border-[#dbdce9]/20"
+                className="p-6 bg-[#3e546e] backdrop-blur-sm rounded-xl border border-[#dbdce9]/20"
               >
                 <CheckCircle className="w-12 h-12 text-[#dbdce9] mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-[#dbdce9] mb-2">Proven Track Record</h3>
@@ -415,7 +401,7 @@ const About = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="p-6 bg-[#dbdce9]/10 backdrop-blur-sm rounded-xl border border-[#dbdce9]/20"
+                className="p-6 bg-[#3e546e] backdrop-blur-sm rounded-xl border border-[#dbdce9]/20"
               >
                 <Award className="w-12 h-12 text-[#dbdce9] mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-[#dbdce9] mb-2">Industry Recognition</h3>
@@ -426,7 +412,7 @@ const About = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="p-6 bg-[#dbdce9]/10 backdrop-blur-sm rounded-xl border border-[#dbdce9]/20"
+                className="p-6 bg-[#3e546e] backdrop-blur-sm rounded-xl border border-[#dbdce9]/20"
               >
                 <TrendingUp className="w-12 h-12 text-[#dbdce9] mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-[#dbdce9] mb-2">Continuous Growth</h3>
