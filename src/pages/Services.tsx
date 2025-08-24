@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Code, Building, Briefcase, Users, CheckCircle, ArrowRight } from 'lucide-react';
+import { Code, Building, Briefcase, CheckCircle, ArrowRight } from 'lucide-react';
 
-const Services = () => {
+const Services = () => { 
   const serviceCategories = [
     {
       icon: Code,
