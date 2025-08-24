@@ -22,9 +22,8 @@ const Footer = () => {
 
   const socialLinks = [
     { icon: Facebook, href: '#', name: 'Facebook' },
-    { icon: Twitter, href: '#', name: 'Twitter' },
-    { icon: Linkedin, href: '#', name: 'LinkedIn' },
-    { icon: Instagram, href: '#', name: 'Instagram' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/company/nexus-consultancy-jobs/', name: 'LinkedIn' },
+    { icon: Instagram, href: 'https://www.instagram.com/nexus_jobs?igsh=ZWV1dDN1cjJ5Z3pl&utm_source=qr', name: 'Instagram' },
   ];
 
   return (

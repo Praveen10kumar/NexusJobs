@@ -76,13 +76,23 @@ const Header = () => {
             ))}
           </nav>
 
-          <motion.button
+          {/* <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="hidden md:block bg-[#3e546e] text-white text-xs lg:text-sm px-4 lg:px-6 py-1.5 lg:py-2 rounded-full font-semibold hover:bg-[#293748] transition-all duration-300"
+            className="hidden md:block bg-[#3e546e] text-white text-xs lg:text-sm px-4 lg:px-6 py-1.5 lg:py-2 rounded-full font-semibold hover:bg-[#293748] transition-all duration-300 mr-2"
           >
             Inquiry Now
-          </motion.button>
+          </motion.button> */}
+
+          <Link to="/login" className="hidden md:block">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-white text-[#3e546e] border border-[#3e546e] text-xs lg:text-sm px-4 lg:px-6 py-1.5 lg:py-2 rounded-full font-semibold hover:bg-gray-50 transition-all duration-300"
+            >
+              Login / Register
+            </motion.button>
+          </Link>
 
           {/* Mobile menu button */}
           <button
@@ -121,6 +131,13 @@ const Header = () => {
                 <button className="mt-2 bg-[#3e546e] text-white px-4 py-2 rounded-full font-semibold text-sm hover:bg-[#293748]">
                   Inquiry Now
                 </button>
+                <Link 
+                  to="/login" 
+                  onClick={() => setIsOpen(false)}
+                  className="mt-2 border border-[#3e546e] text-[#3e546e] px-4 py-2 rounded-full font-semibold text-sm hover:bg-gray-50 flex justify-center"
+                >
+                  Login / Register
+                </Link>
               </nav>
             </motion.div>
           )}
