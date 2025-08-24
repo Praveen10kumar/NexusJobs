@@ -36,9 +36,19 @@ const Home = () => {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-[#3e546e] via-[#293748] to-[#1e2a38]">
+      <section
+        className="relative min-h-screen flex items-center justify-center"
+        style={{
+          backgroundImage: "url('public/category2.jpeg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#3e546e]/80 via-[#293748]/80 to-[#1e2a38]/90"></div>
+
         {/* Animated Background Elements */}
-        <div className="absolute inset-0 overflow-hidden">
+        {/* <div className="absolute inset-0 overflow-hidden">
           <motion.div
             animate={{
               rotate: 360,
@@ -73,9 +83,9 @@ const Home = () => {
               repeat: Infinity,
               ease: "linear"
             }}
-            className="absolute bottom-20 left-1/4 w-16 h-16 bg-[#dbdce9]/8 rounded-full blur-lg hidden sm:block"
+            className="absolute bottom-20 left-1/4 w-16 h-16 bg-[#dbdce9]/8 rounded-full blur-lg sm:block"
           />
-        </div>
+        </div> */}
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
